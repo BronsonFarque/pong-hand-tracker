@@ -1,0 +1,38 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE/project files
+.idea/
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Logs
+*.log
+
+# Databases
+*.sqlite3
+*.db
+
+# Checkpoints / training artifacts
+*.pt
+*.pth
+
+# Large data
+*.npz
+*.npy
+*.csv
+*.h5
+*.zip
+
+# Build
+build/
+dist/
