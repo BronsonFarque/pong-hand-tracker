@@ -17,12 +17,17 @@ This project is a **real-time Pong game controlled by hand detection** using a c
 ## Project Structure
 
 ```
-├── dataset/            # Hand images + XML annotations (not included in repo)
 ├── ObjectDetection/
-│   ├── Activations/          # SSD + VGG16 backbone implementation
-│   ├── Loss_fns/       # Training loop, loss functions, anchor matching
-│   ├── Model_Testing/           # Pong game code with webcam integration
-│   └── Layers/          # Helper scripts (XML parsing, preprocessing, etc.)
+│   ├── SSD.py/ 
+│   ├── Prepare_Data.py/ 
+│   ├── Activations.py/         
+│   ├── Loss_and_Optimizer.py/      
+│   ├── Model_Testing.py/           
+│   ├── Layers.py/
+│   ├── anchor_boxes.npy/
+│   └── hand_data.pkl/
+├── Pong.py/            # Game mechanics of pong 
+├── Pytorch.py/         # Pytorch version of SSD model
 ├── requirements.txt    # Python dependencies
 ├── README.md           # Project overview
 └── .gitignore          # Ignored files (venv, checkpoints, datasets, etc.)
@@ -60,7 +65,7 @@ This project is a **real-time Pong game controlled by hand detection** using a c
 1. Run the Pong game with live detection:
 
    ```bash
-   python src/pong/pong.py
+   python Pong.py
    ```
 
 Your webcam will open and the paddle will move up/down based on your detected hand.
