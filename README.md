@@ -70,15 +70,3 @@ This project is a **real-time Pong game controlled by hand detection** using a c
 
 Your webcam will open and the paddle will move up/down based on your detected hand.
 
----
-
-## Requirements
-
-* Python 3.10+
-* PyTorch
-* OpenCV
-* NumPy
-* Matplotlib (for visualization)
-
----
-
