@@ -91,7 +91,7 @@ def parse_annotations(xml_path):
     tree = ET.parse(xml_path)
     root = tree.getroot()
     filename = os.path.basename(root.find('path').text)
-    img_path = os.path.join('/Users/bronsonf/Desktop/Coding/Hand Dataset/Hand', filename)
+    img_path = os.path.join(file_path_img, filename)
     bboxes = []
 
     for obj in root.findall('object'):
@@ -143,8 +143,8 @@ def split_data(image_data, label_data, train_ratio=0.8):
 
 if __name__ == "__main__":
 
-    xml_dir = '/Users/bronsonf/Desktop/Coding/Hand Dataset/XML'
-    img_dir = '/Users/bronsonf/Desktop/Coding/Hand Dataset/Hand'
+    xml_dir = file_path_xml
+    img_dir = file_path_img
     images, labels = create_hand_data(xml_dir, img_dir)
     split_data(images, labels)
     feature_map_shapes = [(28, 28), (14, 14), (7, 7)]
