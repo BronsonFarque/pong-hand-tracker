@@ -194,7 +194,16 @@ def live_feed(model, device):
 
     model.load_state_dict(torch.load('Last_model_weights.pth'))
     model.eval()
+    
     cap = cv2.VideoCapture(0)
+    if not cap.isOpened():
+        cap.release()
+        cap = cv2.VideoCapture(1)
+
+
+    if not cap.isOpened():
+        raise IOError("No camera found")
+        
     model.to(device)
 
     while True:
